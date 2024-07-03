@@ -38,3 +38,10 @@ Note:
 
 
 // Solution
+
+function decrypt(code) {
+  return code.split(/ /)
+    .map(w => w.match(/\d/g).reduce((n, x) => n + Number(x), 0))
+    .map(c => c % 27)
+    .reduce((s, c) => s += c ? String.fromCharCode(96 + c) : " ", "")
+}
