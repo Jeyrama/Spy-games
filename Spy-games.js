@@ -45,3 +45,5 @@ function decrypt(code) {
     .map(c => c % 27)
     .reduce((s, c) => s += c ? String.fromCharCode(96 + c) : " ", "")
 }
+
+// or
