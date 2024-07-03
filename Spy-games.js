@@ -47,3 +47,9 @@ function decrypt(code) {
 }
 
 // or
+
+const decrypt = code =>
+  code.replace(/\S+(\s|$)/g, block => {
+    let n = block.match(/\d/g).reduce((a, b) => a + +b, 0);
+    return ' abcdefghijklmnopqrstuvwxyz'[n % 27];
+  });
